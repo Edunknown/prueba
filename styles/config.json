@@ -1,0 +1,45 @@
+{
+	"source": ["tokens/**/*.json"],
+	"platforms": {
+		"css": {
+			"transformGroup": "css",
+			"buildPath": "build/css/",
+			"files": [
+				{
+					"destination": "_variables.css",
+					"format": "css/variables"
+				}
+			]
+		},
+
+		"compose": {
+			"transformGroup": "compose",
+			"buildPath": "build/compose/",
+			"files": [
+				{
+					"destination": "StyleDictionaryColor.kt",
+					"format": "compose/object",
+					"options": {
+						"className": "StyleDictionaryColor",
+						"packageName": "StyleDictionaryColor"
+					},
+					"filter": {
+						"$type": "color"
+					}
+				},
+				{
+					"destination": "StyleDictionarySize.kt",
+					"format": "compose/object",
+					"options": {
+						"className": "StyleDictionarySize",
+						"packageName": "StyleDictionarySize",
+						"type": "float"
+					},
+					"filter": {
+						"$type": "dimension"
+					}
+				}
+			]
+		}
+	}
+}
